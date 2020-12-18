@@ -10,6 +10,5 @@ def encoder(message, shift=23):
     return str.translate(message, enc_chars)
         
 
-
-    shift=23
-    print(f'Encrypted Message: {encoder(message, shift)}')
+shift=23
+print(f'Encrypted Message: {encoder(message, shift)}')
