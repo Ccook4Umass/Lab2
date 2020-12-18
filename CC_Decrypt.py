@@ -1,5 +1,5 @@
 chars = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz']
-data = open("ciphertest.txt", "r")
+data = open("CCcipher.txt", "r")
 message = data.readline()
        
 def decoder(message, shift=23):
