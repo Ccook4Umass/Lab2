@@ -2,37 +2,24 @@ import string
 
 mykey="ECE"
 data = open("test.txt", "r")
-input_text = data.readline()
+input_mes = data.readline()
 
-
-ciphertext = []
-matrix = []
-encryption_tuple= []
-row = 0
-control = 0
 source = string.ascii_uppercase
+shift = 23
+matrix = [ source[(i + shift) % 26] for i in range(len(source)) ]
+def coder(thistext):
+    ciphertext = []
+    control = 0
 
+    for x,i in enumerate(input_mes.upper()):
+        if i not in source: 
+            ciphertext.append(i)
+            continue
+        else:
+            control = 0 if control % len(mykey) == 0 else control 
+            result = (source.find(i) + matrix.index(mykey[control])) % 26
+            ciphertext.append(matrix[result])
+            control += 1
 
-
-for row in range(len(source)):
-    matrix.append([ x for i,x in enumerate(source) if i > row ])   
-    for i,x in enumerate(source):
-        if i <= row: matrix[row].append(x)
-
-for x,y in enumerate(input_text.upper()):
-    control = 0 if control % len(mykey) == 0 else control
-    if y in string.punctuation or y in string.whitespace:
-         encryption_tuple.append((y,y))
-    else:
-         encryption_tuple.append((y,mykey[control]))
-         control += 1
-
-for x,y in encryption_tuple:
-    if source.find(x) == -1: 
-        ciphertext.append(x)
-    else:
-        ref_row = matrix[0].index(y)
-        ciphertext.append(matrix[ref_row][source.index(x)])
-
-
-print("-> Encrypted Messaged {0}".format(''.join(ciphertext)))
+    return ciphertext
+print("-> Coded text: {0}".format(''.join(coder(input_mes)).lower()))
