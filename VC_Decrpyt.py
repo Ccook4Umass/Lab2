@@ -1,7 +1,7 @@
 import string
 
 mykey="ECE"
-data = open("ciphertest.txt", "r")
+data = open("VCcipher.txt", "r")
 encoded = data.readline()
 
 
