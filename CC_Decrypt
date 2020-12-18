@@ -29,6 +29,5 @@ def decoder(message, shift=23):
     
 
 
-
-    shift=23
-    print(f'Decrypted Message: {decoder(message, shift)}')
+shift=23
+print(f'Decrypted Message: {decoder(message, shift)}')
