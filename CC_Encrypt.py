@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 chars = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz']
 data = open("test.txt", "r")
 message = data.readline()
