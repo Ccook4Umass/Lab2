@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 chars = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz']
 data = open("CCcipher.txt", "r")
 message = data.readline()
